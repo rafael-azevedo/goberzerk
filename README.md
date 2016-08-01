@@ -4,7 +4,7 @@
 
 **General Setup**
 
-This guide assumes you have Go language environment setup. If you do not please refer to this guide [here](https://golang.org/doc/install)
+This guide assumes you have Go language environment setup and you have a [leap motion](https://www.leapmotion.com/) device and software one your computer . If you do not please refer to this guide [here](https://golang.org/doc/install)
 
 To setup a quick IDE for Go development use the guide [here](https://www.wolfe.id.au/2015/03/05/using-sublime-text-for-go-development/)
  
@@ -24,4 +24,18 @@ You will then need to get a slack api key you can create your own channel and ha
 	`/invite @<your_bot_name>`
 
 *  **Configure Code**
-	*  Clone repo to a directory
+	*  Clone repo to a directory  
+	`git clone https://github.com/rafael-azevedo/goberzerk`
+	*  Insert your api key for the slack bot in the following line  
+	`api := slack.New("SLACK API KEY")`
+	* Use the listchannels.go code to print out the channel IDs of the chat rooms. You will need the channel ID of the room you would like to send messages to  
+	`go build -i listchannels.go` and run the binary 
+	* Use the id in the goberzerk.go channel you want to message
+
+* **Run Code**
+	* Once you have placed the api key and channel id in goberzerk.go you can build and run the code 
+	* Build the Code  
+	`go build -i goberzerk.go`  
+	`./goberzerk.go`
+	
+

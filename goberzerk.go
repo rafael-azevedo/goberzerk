@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"os"
 
 	"github.com/hybridgroup/gobot"
 	"github.com/hybridgroup/gobot/platforms/leap"
@@ -13,24 +12,13 @@ func main() {
 
 	//Configure the Slack Api interface for the nlopes/slack
 	api := slack.New("SLACK API KEY")
-	logger := log.New(os.Stdout, "slack-bot: ", log.Lshortfile|log.LstdFlags)
-	slack.SetLogger(logger)
-	api.SetDebug(true)
+	//Uncomment the logging and debuging if you are having issues
+	//logger := log.New(os.Stdout, "slack-bot: ", log.Lshortfile|log.LstdFlags)
+	//slack.SetLogger(logger)
+	//api.SetDebug(true)
 
 	rtm := api.NewRTM()
 	go rtm.ManageConnection()
-
-	// Use The Slack api to get group information Groups are the chat rooms.
-	//groups, err := api.GetGroups(false)
-	//if err != nil {
-	//	fmt.Printf("%s\n", err)
-	//	return
-	//}
-
-	// Print out the group information use the group number for your chat room in the api call that is sending data to the slack channel
-	//for _, group := range groups {
-	//	fmt.Printf("ID: %s, Name: %s\n", group.ID, group.Name)
-	//}
 
 	//configure a new gobot with drivers and adapter for leap motion
 	gbot := gobot.NewGobot()
@@ -50,8 +38,7 @@ func main() {
 				log.Println("Hit Trigger at count", count)
 				reply(rtm)
 			}
-			log.Println("Tiggers every ", n)
-			//log.Println("Not within ", n ," times")
+			//log.Println("Tiggers every ", n)
 		})
 	}
 
@@ -71,5 +58,5 @@ func main() {
 // This function
 // Place the ID you printed out from the commented out function above here
 func reply(rtm *slack.RTM) {
-	rtm.SendMessage(rtm.NewOutgoingMessage("Intruder alert! Intruder alert! ", "GROUP ID for Room you want to send the message to"))
+	rtm.SendMessage(rtm.NewOutgoingMessage("Intruder alert! Intruder alert! ", "Channel ID for Room you want to send the message to"))
 }
