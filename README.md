@@ -12,10 +12,25 @@ You will then need to get a slack api key you can create your own channel and ha
 
 *  **Create a Slack Channel and Get an API key**
 	* Go to Slack.com. Fill out an email and hit *Create New Team*
+	<p align="left">
+  	<img src="images/newSlack.png" width="350"/>
+	</p>
 	* Once in your slack account hit the drop down next to your user and select *Apps & Integration*
+	<p align="left">
+  	<img src="images/appIntegration.png" width="250"/>
+	</p>
 	* Search and select *Bots*
+	<p align="left">
+  	<img src="images/newBot.png" width="350"/>
+	</p>
 	* Hit *Add Configuration* and give your bot a unique name
+	<p align="left">
+  	<img src="images/addConfiguration.png" width="350"/>
+	</p>
 	* Click *Add bot integration* to finish adding the integration and View settings to get its API key
+	<p align="left">
+  	<img src="images/botIntegration.png" width="350"/>
+	</p>
 
 * **Add the bot to a channel**
 
@@ -31,11 +46,21 @@ You will then need to get a slack api key you can create your own channel and ha
 	* Use the listchannels.go code to print out the channel IDs of the chat rooms. You will need the channel ID of the room you would like to send messages to  
 	`go build -i listchannels.go` and run the binary 
 	* Use the id in the goberzerk.go channel you want to message
+	<p align="left">
+  	<img src="images/listChannels.png" width="150"/>
+	</p>
+
 
 * **Run Code**
 	* Once you have placed the api key and channel id in goberzerk.go you can build and run the code 
 	* Build the Code  
 	`go build -i goberzerk.go`  
 	`./goberzerk.go`
-	
+	<p align="left">
+  	<img src="images/goberzerk.png" width="350"/>
+  	<p align="left">
+  	<img src="images/slackUpdate.png" width="350"/>
+  	</p>
+	</p>
+
 
