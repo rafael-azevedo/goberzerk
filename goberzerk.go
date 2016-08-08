@@ -33,7 +33,7 @@ func main() {
 			count++
 			//Change this number in order to increase or decrease response time
 			n := 100
-			//Since the hand events are verbose only do the following if we recieve data 100 times from the leap motion device
+			//Since the hand events are verbose only do the following if we receive data 100 times from the leap motion device
 			if (count % n) == 0 {
 				log.Println("Hit Trigger at count", count)
 				reply(rtm)
